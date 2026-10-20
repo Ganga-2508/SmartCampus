@@ -566,6 +566,7 @@ export default function App() {
 
   
 
+
 function speakAnswer() {
   if (!('speechSynthesis' in window)) {
     setAnswer('Voice output is not supported in this browser.')
@@ -574,29 +575,29 @@ function speakAnswer() {
 
   window.speechSynthesis.cancel()
 
-  
-const spokenText = answer
-  .replace(/(\d+)\s*\/\s*(\d+)\s*classes/gi, '$1 classes out of $2 classes')
-  .replace(/(\d+)\s*\/\s*(\d+)/g, '$1 out of $2')
-  .replace(/9:10\s*[–-]\s*10:10\s*AM/gi, 'nine ten AM to ten ten AM')
-  .replace(/10:10\s*[–-]\s*11:10\s*AM/gi, 'ten ten AM to eleven ten AM')
-  .replace(/11:10\s*AM\s*[–-]\s*12:10\s*PM/gi, 'eleven ten AM to twelve ten PM')
-  .replace(/11:10\s*[–-]\s*12:10/gi, 'eleven ten to twelve ten')
-  .replace(/1:00\s*[–-]\s*2:00\s*PM/gi, 'one PM to two PM')
-  .replace(/2:00\s*[–-]\s*3:00\s*PM/gi, 'two PM to three PM')
-  .replace(/3:00\s*[–-]\s*4:00\s*PM/gi, 'three PM to four PM')
-  .replace(/7:30\s*[–-]\s*9:00\s*AM/gi, 'seven thirty AM to nine AM')
-  .replace(/12:30\s*[–-]\s*2:00\s*PM/gi, 'twelve thirty PM to two PM')
-  .replace(/4:30\s*[–-]\s*5:30\s*PM/gi, 'four thirty PM to five thirty PM')
-  .replace(/7:30\s*[–-]\s*9:00\s*PM/gi, 'seven thirty PM to nine PM')
-  .replace(/(\d{1,2}):00\s*AM/gi, '$1 AM')
-  .replace(/(\d{1,2}):00\s*PM/gi, '$1 PM')
+  const spokenText = answer
+    .replace(/9:10[–-]10:10 AM/gi, 'nine ten AM to ten ten AM')
+    .replace(/10:10[–-]11:10 AM/gi, 'ten ten AM to eleven ten AM')
+    .replace(/11:10 AM[–-]12:10 PM/gi, 'eleven ten AM to twelve ten PM')
+    .replace(/11:10[–-]12:10/g, 'eleven ten to twelve ten')
+    .replace(/1:00[–-]2:00 PM/gi, 'one PM to two PM')
+    .replace(/2:00[–-]3:00 PM/gi, 'two PM to three PM')
+    .replace(/3:00[–-]4:00 PM/gi, 'three PM to four PM')
+    .replace(/7:30[–-]9:00 AM/gi, 'seven thirty AM to nine AM')
+    .replace(/12:30[–-]2:00 PM/gi, 'twelve thirty PM to two PM')
+    .replace(/4:30[–-]5:30 PM/gi, 'four thirty PM to five thirty PM')
+    .replace(/7:30[–-]9:00 PM/gi, 'seven thirty PM to nine PM')
+    .replace(/(\d+)\s*\/\s*(\d+)\s*classes/gi, '$1 classes out of $2 classes')
+    .replace(/(\d+)\s*\/\s*(\d+)/g, '$1 out of $2')
 
-const utterance = new SpeechSynthesisUtterance(spokenText)
-utterance.lang = 'en-IN'
-utterance.rate = 0.85
-utterance.pitch = 1
-window.speechSynthesis.speak(utterance)
+  const utterance = new SpeechSynthesisUtterance(spokenText)
+  utterance.lang = 'en-IN'
+  utterance.rate = 0.85
+  utterance.pitch = 1
+
+  window.speechSynthesis.speak(utterance)
+}
+
 
 
 
