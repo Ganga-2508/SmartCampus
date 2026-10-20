@@ -1257,7 +1257,7 @@ function TimetablePage() {
         <div>
           <p className="eyebrow">YOUR ACADEMIC SCHEDULE</p>
           <h2>Class Timetable 📚</h2>
-          <p>III B.Tech · IT · Semester I · A.Y. 2025–2026</p>
+          <p>III B.Tech · IT · Semester I · A.Y. 2026–2027</p>
         </div>
         <div className="banner-symbol">▦</div>
       </div>
