@@ -594,6 +594,8 @@ const spokenText = answer
 
 const utterance = new SpeechSynthesisUtterance(spokenText)
 utterance.lang = 'en-IN'
+utterance.rate = 0.85
+utterance.pitch = 1
 window.speechSynthesis.speak(utterance)
 
 
