@@ -106,11 +106,5 @@ SmartCampus is our project submission for the hackathon.
 - Expand student self-service features.
 - Enhance notifications and request status updates.
 - Improve the student assistant with additional supported integrations.
-
-## 📄 License
-
-No license has been specified for this repository yet.
-
----
-
+- 
 ⭐ **SmartCampus — Campus services, all in one place!**
